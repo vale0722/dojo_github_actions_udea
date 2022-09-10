@@ -6,7 +6,7 @@ describe("testing /add path", () => {
         request(api)
         .get("/add?a=1&b=1") // Act
         .then(response => {
-            expect(response.statusCode).toBe(200); //Assert
+            expect(response.statusCode).toBe(300); //Assert
             done();
         });
     });
