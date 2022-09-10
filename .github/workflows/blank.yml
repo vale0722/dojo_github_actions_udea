@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Calculator
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  calculator-pipeline:
+    name: calculator-pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run build
+        uses: actions/setup-node@v2
+      - name: install dependences
+        run: npm ci
+      - name: Run tests
+        run: npm test
